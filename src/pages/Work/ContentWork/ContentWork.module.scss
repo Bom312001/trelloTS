@@ -97,9 +97,12 @@
 // menu-filter
 .menu-filter {
   overflow: hidden;
+  padding-left: 15px;
+  font-size: 14px;
 }
 
 .menu-filter__item {
-  height: 75vh;
+  height: 72vh;
+  overflow: hidden;
   overflow-y: auto;
 }

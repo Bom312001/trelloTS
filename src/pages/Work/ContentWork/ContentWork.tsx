@@ -7,6 +7,7 @@ import {
   CDropdownItem,
   CDropdownMenu,
   CDropdownToggle,
+  CForm,
   CFormCheck,
   CFormInput,
   CImage,
@@ -24,6 +25,7 @@ import {
   faClose,
   faEllipsis,
   faFilter,
+  faLock,
   faRocket,
   faStar,
   faUserGroup,
@@ -45,6 +47,8 @@ const cx = classNames.bind(styles);
 function ContentWork() {
   const [visible, setVisible] = useState(true);
   const [visibleBtnBar, setVisibleBtnBar] = useState(false);
+
+  const [selectedTitle, setSelectedTitle] = useState("Khớp bất kỳ");
 
   return (
     <div className="w-full my-4 pt-2 px-1 pb-3">
@@ -259,8 +263,11 @@ function ContentWork() {
           </CDropdownMenu>
         </CDropdown>
 
+        {/* Filter */}
         <CDropdown autoClose="outside">
-          <CDropdownToggle className="bg-transparent p-0 border-0">
+          <CDropdownToggle
+            className={cx("filter-toggle") + " bg-transparent p-0 border-0"}
+          >
             <CButton
               className={cx("work-btn") + " mx-2 h-8 text-white"}
               color="secondary"
@@ -284,66 +291,119 @@ function ContentWork() {
             <div className={cx("menu-filter__item")}>
               <div className="text-sm my-1">
                 <CFormInput
-                  label="Từ khóa"
+                  label={
+                    <span className="text-[#5e6c84] font-semibold pl-0">
+                      Từ khóa
+                    </span>
+                  }
                   placeholder="Nhập từ khóa..."
                   text="Tìm kiếm các thẻ, các thành viên, các nhãn và hơn thế nữa."
                 />
               </div>
+
               <div>
-                <span>Thành viên</span>
-                <CFormCheck id="flexCheckDefault" label="Không có thành viên" />
+                <span className="text-[#5e6c84] font-semibold">Thành viên</span>
                 <CFormCheck
-                  id="flexCheckChecked"
+                  id="flexCheckNoMember"
+                  label="Không có thành viên"
+                />
+                <CFormCheck
+                  id="flexCheckMember"
                   label="Các thẻ đã chỉ định cho tôi"
                 />
               </div>
+
               <div>
-                <span>Ngày hết hạn</span>
+                <span className="text-[#5e6c84] font-semibold">
+                  Ngày hết hạn
+                </span>
+                <CFormCheck id="flexCheckDate" label="Không có ngày hết hạn" />
+                <CFormCheck id="flexCheckDateMore" label="Quá hạn" />
                 <CFormCheck
-                  id="flexCheckDefault"
-                  label="Không có ngày hết hạn"
-                />
-                <CFormCheck id="flexCheckChecked" label="Quá hạn" />
-                <CFormCheck
-                  id="flexCheckDefault"
+                  id="flexCheckDateDay"
                   label="Sẽ hết hạn vào ngày mai"
                 />
                 <CFormCheck
-                  id="flexCheckChecked"
+                  id="flexCheckDateWeek"
                   label="Sẽ hết hạn vào tuần sau"
                 />
                 <CFormCheck
-                  id="flexCheckDefault"
+                  id="flexCheckDateMonth"
                   label="Sẽ hết hạn vào tháng sau"
                 />
+                <CFormCheck id="flexCheckSucc" label="Đã đánh dấu hoàn thành" />
                 <CFormCheck
-                  id="flexCheckChecked"
-                  label="Đã đánh dấu hoàn thành"
-                />
-                <CFormCheck
-                  id="flexCheckChecked"
+                  id="flexCheckFail"
                   label="Không được đánh dấu là đã hoàn thành"
                 />
               </div>
+
               <div>
-                <span>Nhãn</span>
-                <CFormCheck id="flexCheckDefault" label="Không có nhãn" />
-                <CFormCheck id="flexCheckChecked" label="Checked checkbox" />
-                <CFormCheck id="flexCheckDefault" label="Default checkbox" />
-                <CFormCheck id="flexCheckChecked" label="Checked checkbox" />
-                <CFormCheck id="flexCheckDefault" label="Chọn nhãn" />
+                <span className="text-[#5e6c84] font-semibold">Nhãn</span>
+                <CFormCheck id="flexCheckColor" label="Không có nhãn" />
+                <CFormCheck id="flexCheckColor" label="Checked checkbox" />
+                <CFormCheck id="flexCheckColor" label="Checked checkbox" />
+                <CFormCheck id="flexCheckColor" label="Checked checkbox" />
+                <CFormCheck id="flexCheckColor" label="Chọn nhãn" />
               </div>
               <hr />
               <div>
-                <CDropdown>
-                  <CDropdownToggle href="#" color="light">
-                    Dropdown button
-                  </CDropdownToggle>
-                  <CDropdownMenu>
-                    <CDropdownItem href="#">Action</CDropdownItem>
-                    <CDropdownItem href="#">Another action</CDropdownItem>
-                  </CDropdownMenu>
-                </CDropdown>
+                <CForm>
+                  <CDropdown className="w-full p-0">
+                    <CDropdownToggle color="" className="w-full p-0 border-0">
+                      <div className="mb-2">
+                        <CFormInput
+                          className="relative"
+                          readOnly
+                          value={selectedTitle}
+                        />
+                        <FontAwesomeIcon
+                          className="absolute top-3 right-4"
+                          icon={faChevronDown as IconProp}
+                        />
+                      </div>
+                    </CDropdownToggle>
+                    <CDropdownMenu
+                      className={cx("drop-menu", "mt-11", "w-full", "z-10")}
+                    >
+                      <CDropdownItem
+                        className="w-full whitespace-normal"
+                        onClick={() => setSelectedTitle("Khớp bất kỳ")}
+                      >
+                        <div className="flex items-center w-full">
+                          <FontAwesomeIcon
+                            className="w-6 p-2 mr-2"
+                            icon={faLock as IconProp}
+                          />
+                          <div className="flex flex-col w-full">
+                            <span className={cx("title")}>Khớp bất kỳ</span>
+                            <span className="text-xs">
+                              Chỉ có các thành viên nhóm mới có thể xem và sửa
+                              Nối bất kỳ nhãn với bất kỳ thành viên nào
+                            </span>
+                          </div>
+                        </div>
+                      </CDropdownItem>
+                      <CDropdownItem
+                        className="w-full whitespace-normal"
+                        onClick={() => setSelectedTitle("Khớp hoàn toàn")}
+                      >
+                        <div className="flex items-center w-full">
+                          <FontAwesomeIcon
+                            className="w-6 p-2 mr-2"
+                            icon={faUserGroup as IconProp}
+                          />
+                          <div className="flex flex-col w-full">
+                            <span className={cx("title")}>Khớp hoàn toàn</span>
+                            <span className="text-xs">
+                              Nối mọi nhãn với mọi thành viên
+                            </span>
+                          </div>
+                        </div>
+                      </CDropdownItem>
+                    </CDropdownMenu>
+                  </CDropdown>
+                </CForm>
               </div>
             </div>
           </CDropdownMenu>

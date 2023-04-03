@@ -3,7 +3,7 @@ import "@coreui/coreui/dist/css/coreui.min.css";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import TippyHeadless from "@tippyjs/react/headless";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   CHeader,
   CNav,
@@ -48,10 +48,13 @@ import anh1 from "../../../assets/images/anh1.jpg";
 import imgInfo from "../../../assets/images/imgInfo.png";
 import { PopperWrapper } from "../Popper";
 import config from "../../../config";
+import routes from "../../../config/routes";
 
 const cx = classNames.bind(styles);
 
 function Header() {
+  const navigate = useNavigate();
+
   const [searchResult, setSearchResult] = useState([1]);
   const [showResult, setShowResult] = useState(false);
 
@@ -67,6 +70,12 @@ function Header() {
 
   const handleHideResult = () => {
     setShowResult(false);
+  };
+
+  //logout
+  const handleRemoveLocal = () => {
+    localStorage.removeItem("email");
+    navigate(routes.login);
   };
 
   return (
@@ -584,7 +593,9 @@ function Header() {
                 <CDropdownItem>Trợ giúp</CDropdownItem>
                 <CDropdownItem>Phím tắt</CDropdownItem>
                 <CDropdownDivider />
-                <CDropdownItem>Đăng xuất</CDropdownItem>
+                <CDropdownItem onClick={handleRemoveLocal}>
+                  Đăng xuất
+                </CDropdownItem>
               </CDropdownMenu>
             </CDropdown>
           </div>
