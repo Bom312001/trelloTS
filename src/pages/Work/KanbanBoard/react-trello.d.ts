@@ -1,0 +1,28 @@
+declare module "react-trello" {
+  export const TrelloBoard: any;
+  export const TrelloLane: any;
+  export const TrelloCard: any;
+  export const TrelloDragDropContext: any;
+  export const TrelloEditableLabel: any;
+  export const TrelloEditLaneTitle: any;
+  export const TrelloAddLaneButton: any;
+  export const TrelloAddCardLink: any;
+  export const TrelloCustomLaneHeader: any;
+  export const TrelloCustomLaneFooter: any;
+  export const TrelloCustomCardHeader: any;
+  export const TrelloCustomCardFooter: any;
+  export const TrelloLaneHeader: any;
+  export const TrelloCardDescription: any;
+  export const TrelloCardLabel: any;
+  export const TrelloLabel: any;
+  export const TrelloLabelText: any;
+  export const TrelloLoading: any;
+  export const TrelloModal: any;
+  export const TrelloSearch: any;
+  export const TrelloTitle: any;
+  export const TrelloToolbar: any;
+  export const TrelloToolbarButton: any;
+  export const TrelloDropdown: any;
+  export const TrelloMenuItem: any;
+  export const TrelloIcon: any;
+}

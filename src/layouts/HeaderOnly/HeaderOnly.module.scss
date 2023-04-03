@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../assets/images/bgWork.jpg');
+    background-size: cover;
+}
+
+.container {
+    position: absolute;
+    margin-top: 64px;
+    width: 100%; 
+    max-width: 100%; // dù thu  nhỏ màn hình cx k bị ẩn sidebar
+    display: flex;
+    // min-height: 1000px;
+    // height: 689px;
+
+}
+
+.content {
+    flex-grow: 1;
+    overflow: hidden;
+    // display: flex;
+}

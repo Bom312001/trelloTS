@@ -1,0 +1,36 @@
+.list-gr {
+    margin-bottom: 24px;
+    --cui-list-group-border-width: 0;
+
+    &__btn{
+        padding-left: 0;
+        display: flex;
+        background-color: transparent;
+        height: 48px;
+    }
+
+    &__btn:hover {
+        background-color: rgba(9, 30, 66, 0.08);
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    &__icon:hover {
+        color: yellow;
+        transition: 0.15s color;
+    }
+
+    &__item:hover &__icon {
+        display: inline-block;
+    }
+
+    &__item:hover {
+        background-color: rgba(9, 30, 66, 0.08);
+    }
+}
+
+
+
+

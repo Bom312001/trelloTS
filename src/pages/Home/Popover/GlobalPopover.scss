@@ -1,0 +1,16 @@
+.dropdown-item {
+    white-space: normal
+}
+
+.btn.form-btn {
+    --cui-btn-bg: rgba(9, 30, 66, 0.04);
+    box-shadow: none;
+    border: none;
+    color:  #a5adba;
+    cursor: not-allowed;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    pointer-events: auto;
+}
+

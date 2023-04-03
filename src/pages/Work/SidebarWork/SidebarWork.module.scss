@@ -1,0 +1,146 @@
+.wrapper {
+    // position: fixed;
+    width: 260px;
+    transition: width 100ms ease-in;
+    // flex-shrink: 0;
+
+    &.wrapper-0{
+        width: 0;
+    }
+}
+
+.sidebar-nav {
+    overflow: visible;
+}
+
+.btn-hide {
+    position: absolute;
+    z-index: 11;
+    top: 18px; 
+    left: 210px;
+}
+
+.btn-show {
+    z-index: 11;
+    left: -36px;
+    transition: left 100ms ease-in;
+    height: 100%;
+    width: 15px;
+    background-color: rgba(255, 255, 255, 0.16)
+}
+
+
+.hide-btn {
+    left: 0;
+}
+
+
+.wrapper-body {
+    position: fixed;
+    z-index: 10;
+    width: 260px;
+    background-color: hsla(202,10%,15.7%,0.9);
+    top: 63px;
+    bottom: 0;
+    left: 0;
+    transition: left 100ms ease-in;
+}
+
+.hide-sidebar {
+    left: -260px;
+}
+
+
+.custom-sidebar {
+    color: #fff !important;
+    background-color: hsla(202,10%,15.7%,0.9);
+    width: 100%;
+}
+
+.sidebar-title {
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.nav-item__icon{
+  display: none;
+}
+
+.nav-item__icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.nav-item:hover .nav-item__icon{
+    display: block;
+    cursor: pointer;
+    // background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+
+
+.title-icon {
+    padding: 4px 8px;
+}
+
+.title-icon:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+
+.drop-btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    --cui-btn-active-bg: transparent;   
+}
+
+.drop-btn:hover {
+    background-color: hsla(0, 0%, 0%, 0.08);
+
+}
+
+.drop-menu {
+    position: absolute;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <CSidebar className={cx('custom-sidebar',"fixed")}>

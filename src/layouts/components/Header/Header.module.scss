@@ -1,0 +1,161 @@
+
+
+.tippy-box[data-animation="fade"][data-state="visible"] {
+  background-color: red;
+}
+
+.header-container {
+  background: #026AA7;
+  height: 44px;
+}
+
+.logo-trello {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 75px;
+  height: 15px;
+  padding: 8px 0;
+  margin: 0;
+  opacity: 1;
+}
+
+
+.drop-menu {
+  max-width: 432px;
+  min-width: 220px;
+  max-height: 1000px;
+  min-height: 100px;
+  // transform: none !important;
+  // top: 40px !important;
+}
+
+.drop-menu_btn {
+  background-color: transparent;
+}
+.drop-menu_btn:hover {
+  background-color: rgba(9, 30, 66, 0.04);
+}
+
+//  help & tai khoan
+.drop-menu-item {
+  background-color: #f6eaea;
+  margin-bottom: -8px;
+  margin-top: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.drop-menu-item:hover {
+  background-color: #f6eaea;
+
+}
+
+
+
+.btn{
+  background-color: transparent;
+  --cui-btn-font-size: 14px;
+}
+
+.btn:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.btn--new{
+  background-color: rgba(0,0,0,0.2);
+  --cui-btn-font-size: 14px 
+}
+
+.box {
+  background-color:#fff ;
+}
+
+.search {
+
+  &__icon {
+      top: 10px;
+      color: #ccc;
+      right: 0px;
+  }
+
+  &__search {
+      margin-left: 8px;
+      padding-right: 30px;
+  }
+}
+
+.help, .notifi {
+
+  &__tooltip {
+      visibility: hidden;
+      width: 82px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0;
+      /* Position the tooltip */
+      z-index: 1;
+      top: 36px;
+      left: -106%;
+  }
+}
+
+.help:hover .help__tooltip {
+  visibility: visible;
+}
+
+.notifi:hover .help__tooltip {
+  visibility: visible;
+}
+
+.avatar {
+  &__tooltip {
+      visibility: hidden;
+      width: 82px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0;
+      /* Position the tooltip */
+      z-index: 1;
+      top: 47px;
+      left: -100%;
+  }
+}
+
+.avatar:hover .avatar__tooltip {
+  visibility: visible;
+}
+
+
+.drop-menu-item {
+  min-width: 384px;
+  max-height: 1000px;
+  min-height: 100px;
+}
+
+
+// help link
+.help-list {
+  &__item {
+      background-color: transparent;
+      border: none;
+  }
+  
+  &__item:hover {
+      background-color: rgba(9, 30, 66, 0.08);
+  }
+  
+  &__item-link {
+      color: #5e6c84;
+  }
+  &__item-link:hover {
+      color: #5e6c84; 
+      text-decoration: none;
+      border-radius: 3px;
+  }
+}
+

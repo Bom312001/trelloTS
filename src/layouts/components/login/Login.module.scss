@@ -1,0 +1,124 @@
+.btn-icon {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.54);
+  box-shadow: rgb(0 0 0 / 20%) 1px 1px 5px 0;
+  border-color: transparent;
+  text-align: center;
+  border-radius: 3px;
+  width: 99%;
+  height: 39px;
+  padding-top: 0;
+  margin-bottom: 12px;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out 0s,
+    border-color 0.2s ease-in-out 0s;
+  transition: background-color 0.2s ease-in-out 0s,
+    border-color 0.2s ease-in-out 0s;
+}
+
+.btn-text {
+  // display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  color: #505f79;
+  padding: 3px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.hr {
+  margin-top: 25px !important;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid hsl(39deg 3% 46%);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.link-sign {
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  // display: flex;
+}
+
+.link-sign_li {
+  display: inline-block;
+  list-style: none;
+}
+
+.forgotLink,
+.signupLink {
+  text-decoration: none;
+  color: #0052cc;
+}
+
+.select-container {
+  display: inline-block;
+  margin: 0 0 1.2em;
+  padding: 0;
+  position: relative;
+}
+
+.selection-option {
+  position: relative;
+  background: none;
+  border: 2px solid #edeff0;
+  position: auto;
+  height: 100%;
+  width: auto;
+  padding: 0.5em;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.selection__icon {
+  position: absolute;
+  top: 11px;
+  color: #000;
+  right: 16px;
+}
+
+// footer
+.footer__logo {
+  position: relative;
+}
+.footer__logo::before {
+  content: "";
+  top: -55%;
+  left: 33%;
+  position: absolute;
+  width: 34%;
+  border: 1px solid #ccc;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0.5em 0 0;
+  padding: 0;
+}
+
+.global-footer-list {
+  max-width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 0.4em;
+}
+
+.global-footer-list-item-link {
+  text-decoration: none;
+  color: #5e6c84;
+}
+
+.global-footer-list-item-link:hover {
+  text-decoration: underline;
+}

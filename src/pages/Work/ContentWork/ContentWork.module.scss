@@ -1,0 +1,105 @@
+.work-name {
+  background: #0000;
+  cursor: default;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.work-name:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.work-icon-btn {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  margin-bottom: 4px;
+}
+.work-icon {
+  transform: scale(0.8);
+}
+.work-icon:hover {
+  color: yellow;
+  transform: scale(1.2);
+  transition: all 0.15s;
+}
+
+.work-link {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.work-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.work-link::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 7px;
+  left: -9px;
+  border: 1px solid hsla(0, 0%, 100%, 0.16);
+  height: 20px;
+}
+
+.work-btn {
+  position: relative;
+}
+
+.work-btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 7px;
+  left: -9px;
+  border: 1px solid hsla(0, 0%, 100%, 0.16);
+  height: 20px;
+}
+
+//modal
+.modal-wrapper {
+  --cui-modal-width: 60%;
+}
+
+.hr-header {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid hsl(39deg 3% 46%);
+  margin-left: 3%;
+  margin-bottom: 0;
+  width: 95%;
+}
+
+.hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid hsl(39deg 3% 46%);
+  margin-left: 3%;
+  width: 95%;
+}
+
+.drop-item:hover {
+  background-color: #091e4214;
+  width: 100%;
+  border-radius: 2px;
+}
+
+// menu-filter
+.menu-filter {
+  overflow: hidden;
+}
+
+.menu-filter__item {
+  height: 75vh;
+  overflow-y: auto;
+}
