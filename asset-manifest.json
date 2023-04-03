@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/trelloTS/static/css/main.44e75733.css",
+    "main.js": "/trelloTS/static/js/main.149eedfb.js",
+    "static/js/787.9538e3f3.chunk.js": "/trelloTS/static/js/787.9538e3f3.chunk.js",
+    "static/media/bgWork.jpg": "/trelloTS/static/media/bgWork.af90f61d04a6f30e11b0.jpg",
+    "static/media/anh1.jpg": "/trelloTS/static/media/anh1.c1f514bcc2d5db0015a0.jpg",
+    "static/media/imgUtility.png": "/trelloTS/static/media/imgUtility.42f8533548e4eeb72589.png",
+    "static/media/imgInfo.png": "/trelloTS/static/media/imgInfo.a6ef15e44916d8461c20.png",
+    "static/media/logoPopover.jfif": "/trelloTS/static/media/logoPopover.e2376e44bb186b2993bc.jfif",
+    "static/media/logoHome.svg": "/trelloTS/static/media/logoHome.e55b3540e5c1f06a51d798c4901a8682.svg",
+    "static/media/imgLogo.svg": "/trelloTS/static/media/imgLogo.14cda5dc635d1f13bc4828f5113d1e86.svg",
+    "index.html": "/trelloTS/index.html",
+    "static/media/mau1.svg": "/trelloTS/static/media/mau1.707f35bc691220846678ca9721096219.svg",
+    "static/media/mau2.svg": "/trelloTS/static/media/mau2.d106776cb297f000b1f458a93a27ffcd.svg",
+    "static/media/mau3.svg": "/trelloTS/static/media/mau3.8ab3b35f3a786bb6cdace523ccf2fe96.svg",
+    "static/media/mau4.svg": "/trelloTS/static/media/mau4.a7c521b94eb153008f2d0d4b363ac9f1.svg",
+    "static/media/mau5.svg": "/trelloTS/static/media/mau5.aec98becb6d15a5fc95eb29068b7a837.svg",
+    "main.44e75733.css.map": "/trelloTS/static/css/main.44e75733.css.map",
+    "main.149eedfb.js.map": "/trelloTS/static/js/main.149eedfb.js.map",
+    "787.9538e3f3.chunk.js.map": "/trelloTS/static/js/787.9538e3f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44e75733.css",
+    "static/js/main.149eedfb.js"
+  ]
+}
