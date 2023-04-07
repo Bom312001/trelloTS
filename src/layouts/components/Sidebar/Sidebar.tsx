@@ -61,8 +61,13 @@ function Sidebar() {
           <CSidebar hidden={!show} className={cx("custom-sidebar", "fixed")}>
             <CSidebarNav>
               <CNavItem href="#">
-                <span className="text-[#172B4D] font-bold">With badge</span>
-                <CBadge color="primary ms-auto">NEW</CBadge>
+                <NavLink
+                  className="inline-block w-full no-underline pl-4"
+                  to={config.routes.view}
+                >
+                  <span className="text-[#172B4D] font-bold">With badge</span>
+                  <CBadge color="primary ms-auto">NEW</CBadge>
+                </NavLink>
               </CNavItem>
 
               <CNavItem className="flex h-12 items-center">

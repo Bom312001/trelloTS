@@ -1,0 +1,64 @@
+.cell-card {
+  &__icon {
+    display: none;
+  }
+}
+
+.cell-card:hover .cell-card__icon {
+  display: block;
+}
+
+.cell-list {
+  &__icon {
+    display: none;
+  }
+}
+
+.cell-list:hover .cell-list__icon {
+  display: inline-block;
+}
+
+.cell-label:hover {
+  background-color: #f1f2f4;
+}
+
+.cell-label:hover .cell-label__dost {
+  display: none;
+}
+
+.cell-label:hover .cell-label__icon {
+  display: block;
+}
+
+.cell-label__icon {
+  display: none;
+}
+
+// menu-label
+.menu-label {
+  overflow: hidden;
+  font-size: 14px;
+  width: 304px;
+  padding-top: 4px;
+}
+
+.menu-label__item {
+  padding: 0 15px;
+  height: 52vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.menu-member {
+  overflow: hidden;
+  font-size: 14px;
+  width: 304px;
+  padding-top: 4px;
+  min-height: 250px;
+}
+
+.menu-member__item {
+  padding: 0 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}

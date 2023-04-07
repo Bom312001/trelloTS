@@ -1,0 +1,33 @@
+.custom-sidebar {
+  background-color: #fff;
+  // --cui-sidebar-bg: #fff;
+  //   width: 90%;
+  //   padding-top: 20px;
+}
+
+.wrapper {
+  position: sticky;
+  min-width: 240px;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+// .wrapper-body {
+//   position: fixed;
+//   z-index: 10;
+//   top: 63px;
+//   bottom: 0;
+//   width: inherit;
+//   background-color: #fff;
+// }
+
+// .work-item__icon {
+//   opacity: 0;
+//   transition: all 0.3s ease-in-out; /* Thêm transition */
+// }
+
+// .work-item:hover .work-item__icon {
+//   opacity: 1;
+//   transform: translateX(-10px); /* Thêm animation */
+// }

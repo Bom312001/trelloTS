@@ -1,14 +1,13 @@
-
-interface BoardDataItem {
+export interface BoardDataItem {
   lanes: {
-    id:Number;
-    title:String;
+    id: Number;
+    title: String;
     cards: {
-      id:Number;
-      title:String;
+      id: Number;
+      title: String;
       description: String;
-    } []
-  }[]
+    }[];
+  }[];
 }
 
 export const BoardData: BoardDataItem = {
@@ -20,19 +19,19 @@ export const BoardData: BoardDataItem = {
         {
           id: 1,
           title: "Card title 1",
-          description: "Card content"
+          description: "Card content",
         },
         {
           id: 2,
           title: "Card title 2",
-          description: "Card content"
+          description: "Card content",
         },
         {
           id: 3,
           title: "Card title 3",
-          description: "Card content"
-        }
-      ]
+          description: "Card content",
+        },
+      ],
     },
     {
       id: 2,
@@ -41,9 +40,9 @@ export const BoardData: BoardDataItem = {
         {
           id: 9,
           title: "Card title 9",
-          description: "Card content"
-        }
-      ]
+          description: "Card content",
+        },
+      ],
     },
     {
       id: 3,
@@ -52,14 +51,14 @@ export const BoardData: BoardDataItem = {
         {
           id: 10,
           title: "Card title 10",
-          description: "Card content"
+          description: "Card content",
         },
         {
           id: 11,
           title: "Card title 11",
-          description: "Card content"
-        }
-      ]
+          description: "Card content",
+        },
+      ],
     },
     {
       id: 4,
@@ -68,14 +67,14 @@ export const BoardData: BoardDataItem = {
         {
           id: 12,
           title: "Card title 12",
-          description: "Card content"
+          description: "Card content",
         },
         {
           id: 13,
           title: "Card title 13",
-          description: "Card content"
-        }
-      ]
+          description: "Card content",
+        },
+      ],
     },
     // {
     //   id: 5,
@@ -93,5 +92,5 @@ export const BoardData: BoardDataItem = {
     //     }
     //   ]
     // }
-  ]
-}
+  ],
+};

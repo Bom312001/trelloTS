@@ -52,7 +52,7 @@ import routes from "../../../config/routes";
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header(): JSX.Element {
   const navigate = useNavigate();
 
   const [searchResult, setSearchResult] = useState([1]);

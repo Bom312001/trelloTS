@@ -12,6 +12,7 @@ import {
   CFormInput,
   CImage,
   CModal,
+  CNavLink,
   COffcanvas,
   COffcanvasBody,
   COffcanvasHeader,
@@ -45,10 +46,22 @@ import { Notifi } from "../../../assets/data/DataContent/Notifi";
 
 const cx = classNames.bind(styles);
 function ContentWork() {
-  const [visible, setVisible] = useState(true);
+  const [visibleShare, setVisibleShare] = useState(true);
   const [visibleBtnBar, setVisibleBtnBar] = useState(false);
 
   const [selectedTitle, setSelectedTitle] = useState("Khớp bất kỳ");
+  const [selectedText, setSelectedText] = useState(
+    "Hiển thị trong không gian làm việc"
+  );
+
+  // const [isOpen, setIsOpen] = useState(false);
+  const [isShowSpace, setIsShowSpace] = useState(false);
+  const [isOpenUtili, setIsOpenUtili] = useState(false);
+  const [isOpenAuto, setIsOpenAuto] = useState(false);
+  const [isShowFilter, setIsShowFilter] = useState(false);
+  const [isShowIcon, setIsShowIcon] = useState(false);
+
+  // console.log(isOpen);
 
   return (
     <div className="w-full my-4 pt-2 px-1 pb-3">
@@ -86,26 +99,41 @@ function ContentWork() {
           " no-underline text-white inline-flex items-center h-8 px-2 text-sm mx-2"
         }
       >
-        <CDropdown>
-          <CDropdownToggle className="bg-transparent border-0 w-full h-full">
-            <div
-              className=""
-              title="Tất cả các thành viên của không gian làm việc có thể xem và sửa bảng này."
-            >
+        <CDropdown
+          visible={isShowSpace}
+          onShow={() => setIsShowSpace(true)}
+          onHide={() => setIsShowSpace(false)}
+          autoClose="outside"
+        >
+          <CDropdownToggle
+            className="bg-transparent border-0 w-full h-full"
+            value={selectedText}
+          >
+            <div title="Tất cả các thành viên của không gian làm việc có thể xem và sửa bảng này.">
               <FontAwesomeIcon
                 className="text-sm"
                 icon={faUserGroup as IconProp}
               />
-              <span className="pl-1 text-sm">Không gian làm việc</span>
+              <span className="pl-1 text-sm">{selectedText}</span>
             </div>
           </CDropdownToggle>
-          <CDropdownMenu className="mt-11 w-96 z-10">
-            <CDropdownHeader>Khả năng xem</CDropdownHeader>
+          <CDropdownMenu className={cx("drop-menu-space", "mt-3 w-96 z-10")}>
+            <div className="flex items-center justify-between px-3">
+              <div>Khả năng xem </div>
+              <FontAwesomeIcon
+                icon={faClose as IconProp}
+                onClick={() => setIsShowSpace(!isShowSpace)}
+              />
+            </div>
             {DataContent.map((data) => (
               <CDropdownItem
                 key={data.id.toString()}
                 disabled={data.disabled}
                 className="w-full whitespace-normal cursor-pointer"
+                onClick={() => {
+                  setSelectedText(`${data.header}`);
+                  setIsShowSpace(false);
+                }}
               >
                 <div className="flex items-center w-full">
                   <FontAwesomeIcon
@@ -138,7 +166,12 @@ function ContentWork() {
       </NavLink>
 
       {/* icon chervonDown */}
-      <CDropdown>
+      <CDropdown
+        visible={isShowIcon}
+        onShow={() => setIsShowIcon(true)}
+        onHide={() => setIsShowIcon(false)}
+        autoClose="outside"
+      >
         <CDropdownToggle className="bg-transparent border-0 w-full h-full">
           <CButton
             color="light"
@@ -160,7 +193,16 @@ function ContentWork() {
           </CButton>
         </CDropdownToggle>
         <CDropdownMenu className="mt-11 w-80 z-10">
-          <CDropdownHeader>Nâng cấp cho chế độ xem</CDropdownHeader>
+          <div className="flex flex-row items-center justify-between mx-2 border-b border-solid border-[rgba(9, 30, 66, 0.13)]">
+            <h3 className="ml-3 text-sm mx-auto">Nâng cấp cho chế độ xem</h3>
+            <div>
+              <FontAwesomeIcon
+                className="ml-4 cursor-pointer"
+                icon={faClose as IconProp}
+                onClick={() => setIsShowIcon(false)}
+              />
+            </div>
+          </div>
           {LevelData.map((data) => (
             <CDropdownItem
               key={data.id.toString()}
@@ -190,8 +232,13 @@ function ContentWork() {
 
       <div className="float-right pt-[2px]">
         {/* tiện ích */}
-        <CDropdown>
-          <CDropdownToggle className="bg-transparent p-0 border-0">
+        <CDropdown
+          visible={isOpenUtili}
+          onShow={() => setIsOpenUtili(true)}
+          onHide={() => setIsOpenUtili(false)}
+          autoClose="outside"
+        >
+          <CDropdownToggle className="bg-transparent p-0 border-0 relative">
             <CButton
               title="Tiện ích bổ sung"
               className="mx-2 h-8 text-white"
@@ -207,7 +254,11 @@ function ContentWork() {
             <div className="flex flex-row items-center justify-between mx-2 border-b border-solid border-[rgba(9, 30, 66, 0.13)]">
               <h3 className="ml-3 text-sm mx-auto">Tiện ích bổ sung</h3>
               <div>
-                <FontAwesomeIcon className="ml-4" icon={faClose as IconProp} />
+                <FontAwesomeIcon
+                  className="ml-4 cursor-pointer"
+                  icon={faClose as IconProp}
+                  onClick={() => setIsOpenUtili(false)}
+                />
               </div>
             </div>
             <div className="w-[432px] flex flex-col items-center justify-center my-3">
@@ -219,12 +270,24 @@ function ContentWork() {
                 </h3>
               </div>
             </div>
-            <CButton className="w-11/12 ml-4">Thêm tiện ích bổ sung</CButton>
+            <NavLink
+              to="/works/utility"
+              className="inline-block no-underline text-white w-full"
+              onClick={() => setIsOpenUtili(false)}
+            >
+              <CButton className="w-11/12 ml-4">Thêm tiện ích bổ sung</CButton>
+            </NavLink>
           </CDropdownMenu>
         </CDropdown>
 
-        <CDropdown>
-          <CDropdownToggle className="bg-transparent p-0 border-0">
+        {/* auto hóa */}
+        <CDropdown
+          visible={isOpenAuto}
+          onShow={() => setIsOpenAuto(true)}
+          onHide={() => setIsOpenAuto(false)}
+          autoClose="outside"
+        >
+          <CDropdownToggle className="bg-transparent p-0 border-0 relative">
             <CButton
               title="Tự động hóa"
               className="mx-2 h-8 text-white"
@@ -232,39 +295,57 @@ function ContentWork() {
             >
               <div className="flex items-center justify-center text-sm">
                 <FontAwesomeIcon icon={faBoltLightning as IconProp} />
-                <span className="pl-1">Tự động hóa</span>
+                <div className="pl-1">Tự động hóa</div>
               </div>
             </CButton>
           </CDropdownToggle>
-          <CDropdownMenu className="mt-11 w-96 z-10">
+          <CDropdownMenu className=" mt-11 w-96 z-10">
             <div className="flex flex-row items-center justify-between mx-2 border-b border-solid border-[rgba(9, 30, 66, 0.13)]">
               <h3 className="ml-3 text-sm mx-auto">Tự động hóa</h3>
               <div>
-                <FontAwesomeIcon className="ml-4" icon={faClose as IconProp} />
+                <FontAwesomeIcon
+                  className="ml-4 cursor-pointer"
+                  icon={faClose as IconProp}
+                  onClick={() => setIsOpenAuto(false)}
+                />
               </div>
             </div>
             {AutoMation.map((data) => (
               <CDropdownItem
                 key={data.id.toString()}
                 className="w-full whitespace-normal cursor-pointer"
+                onClick={() => setIsOpenAuto(false)}
               >
-                <div className="flex items-center w-full ">
-                  <FontAwesomeIcon
-                    className="w-6 py-2 mr-2 text-sm"
-                    icon={data.icon}
-                  />
-                  <span className={cx("title", "text-sm")}>{data.title}</span>
-                </div>
-                <div className="flex w-full">
-                  <span className="text-xs">{data.text}</span>
-                </div>
+                <NavLink
+                  to={data.to}
+                  className="inline-block w-full no-underline pl-4 text-[#172D4B] hover:text-[#172D4B]"
+                >
+                  <div className="flex items-center w-full ">
+                    <FontAwesomeIcon
+                      className="w-6 py-2 mr-2 text-sm"
+                      icon={data.icon}
+                    />
+                    <span className={cx("title", "text-sm", "text-[#172D4B]")}>
+                      {data.title}
+                    </span>
+                  </div>
+                  <div className="flex w-full">
+                    <span className="text-xs text-[#5e6c84]">{data.text}</span>
+                  </div>
+                </NavLink>
               </CDropdownItem>
             ))}
           </CDropdownMenu>
         </CDropdown>
 
         {/* Filter */}
-        <CDropdown autoClose="outside">
+        {/* {isShowFilter ? 4 : 6}11 */}
+        <CDropdown
+          visible={isShowFilter}
+          onShow={() => setIsShowFilter(true)}
+          onHide={() => setIsShowFilter(false)}
+          autoClose="outside"
+        >
           <CDropdownToggle
             className={cx("filter-toggle") + " bg-transparent p-0 border-0"}
           >
@@ -285,7 +366,11 @@ function ContentWork() {
             <div className="flex flex-row items-center justify-between mx-2 border-b border-solid border-[rgba(9, 30, 66, 0.13)]">
               <h3 className="ml-3 text-sm mx-auto">Lọc</h3>
               <div>
-                <FontAwesomeIcon className="ml-4" icon={faClose as IconProp} />
+                <FontAwesomeIcon
+                  className="ml-4"
+                  icon={faClose as IconProp}
+                  onClick={() => setIsShowFilter(false)}
+                />
               </div>
             </div>
             <div className={cx("menu-filter__item")}>
@@ -414,7 +499,7 @@ function ContentWork() {
           className="mx-2 h-8 "
           color="light"
           onClick={(e) => {
-            setVisible(!visible);
+            setVisibleShare(!visibleShare);
             e.stopPropagation();
           }}
         >
@@ -429,9 +514,9 @@ function ContentWork() {
         <CModal
           className={cx("modal-wrapper")}
           scrollable
-          visible={visible}
+          visible={visibleShare}
           onClose={() => {
-            setVisible(false);
+            setVisibleShare(false);
           }}
           alignment="center"
         >

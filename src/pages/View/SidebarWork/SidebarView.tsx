@@ -29,16 +29,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import classNames from "classnames/bind";
-import styles from "./SidebarWork.module.scss";
+import styles from "./SidebarView.module.scss";
 import imgMu from "../../../assets/images/mu.png";
 import Modal from "./Modal/Modal";
 import Popover from "../../Home/Popover/Popover";
 import "./GlobalStyleBarWork.scss";
-import routes from "../../../config/routes";
 
 const cx = classNames.bind(styles);
 
-function SidebarWork() {
+function SidebarView() {
   const [hideBtn, setHideBtn] = useState(true);
   const [show, setShow] = useState(true);
   // const [sidebarClass, setSidebarClass] = useState('wrapper-body');
@@ -61,9 +60,10 @@ function SidebarWork() {
         }
       >
         <CButton
-          color="secondary ms-auto rounded-circle"
+          color="dark ms-auto rounded-circle"
+          size="sm"
           onClick={handleToggleSidebar}
-          className="absolute top-7 "
+          className="absolute top-7"
         >
           <FontAwesomeIcon
             className="text-white"
@@ -80,7 +80,7 @@ function SidebarWork() {
       >
         <CSidebar
           // hidden={!show}
-          className={cx("custom-sidebar", "fixed")}
+          className={cx("custom-sidebar", "fixed ")}
         >
           <CSidebarNav className={cx("sidebar-nav")}>
             <CNavTitle className={cx("sidebar-title", "flex", "items-center")}>
@@ -106,10 +106,10 @@ function SidebarWork() {
               </CButton>
             </CNavTitle>
 
-            <CNavItem className="flex items-center pl-6 h-8 py-2 mt-3">
+            <CNavItem className="flex items-center pl-6 h-8 py-2 mt-3 ">
               <NavLink
                 to="/"
-                className="inline-block w-full no-underline text-white"
+                className="inline-block w-full no-underline text-black"
               >
                 <FontAwesomeIcon className="mr-3" icon={faTable as IconProp} />
                 <span className="font-normal text-sm">Bảng</span>
@@ -119,7 +119,7 @@ function SidebarWork() {
             <CNavItem className="flex items-center pl-6 h-8 py-2">
               <NavLink
                 to="/"
-                className="inline-flex items-center w-full no-underline text-white"
+                className="inline-flex items-center w-full no-underline text-black"
               >
                 <FontAwesomeIcon className="mr-3" icon={faUser as IconProp} />
                 <div>
@@ -131,17 +131,17 @@ function SidebarWork() {
 
             <CDropdown className={cx("drop-tab")} placement="right-start">
               <CDropdownToggle className={cx("drop-btn")}>
-                <CNavItem className="flex items-center pl-6 h-10 py-2">
+                <CNavItem className="flex items-center pl-6 h-10 py-2 ">
                   <div>
                     <FontAwesomeIcon
-                      className="mr-2"
+                      className="mr-2 text-black"
                       icon={faGear as IconProp}
                     />
                   </div>
-                  <span className="font-normal text-sm text-white mr-3">
+                  <span className="font-normal text-sm mr-3 text-black">
                     Các cài đặt Không gian làm việc
                   </span>
-                  <div className="mr-4">
+                  <div className="mr-4 text-black">
                     <FontAwesomeIcon icon={faChevronDown as IconProp} />
                   </div>
                 </CNavItem>
@@ -157,9 +157,12 @@ function SidebarWork() {
             </CDropdown>
 
             <CNavTitle className="h-8 my-2">
-              <div className="flex items-center h-full grow">
-                <div className="text-sm normal-case font-semibold text-white">
+              <div className="flex items-center h-full grow justify-between">
+                <div className="text-sm normal-case font-semibold">
                   Dạng xem không gian làm việc
+                </div>
+                <div className="hover:bg-[#091E4224] py-1 px-2 rounded">
+                  <FontAwesomeIcon icon={faPlus as IconProp} />
                 </div>
               </div>
             </CNavTitle>
@@ -175,8 +178,8 @@ function SidebarWork() {
               )}
             >
               <NavLink
-                to={routes.view}
-                className="inline-flex items-center w-full no-underline text-white"
+                to="/works/utility"
+                className="inline-flex items-center w-full no-underline text-black"
               >
                 <div className="flex items-center flex-1">
                   <FontAwesomeIcon
@@ -204,7 +207,7 @@ function SidebarWork() {
             >
               <NavLink
                 to="/"
-                className="inline-flex items-center w-full no-underline text-white"
+                className="inline-flex items-center w-full no-underline text-black"
               >
                 <div className="flex items-center flex-1">
                   <FontAwesomeIcon
@@ -222,7 +225,7 @@ function SidebarWork() {
 
             <CNavTitle className="mt-0">
               <div className="flex items-center grow justify-between">
-                <span className="text-sm normal-case font-semibold text-white">
+                <span className="text-sm normal-case font-semibold ">
                   Các bảng của bạn
                 </span>
                 <CPopover
@@ -240,7 +243,7 @@ function SidebarWork() {
                 >
                   <div className={cx("title-icon")}>
                     <FontAwesomeIcon
-                      className="text-white"
+                      className="text-black"
                       icon={faPlus as IconProp}
                     />
                   </div>
@@ -260,7 +263,7 @@ function SidebarWork() {
             >
               <NavLink
                 to="/"
-                className="inline-flex items-center w-full no-underline text-white"
+                className="inline-flex items-center w-full no-underline text-black"
               >
                 <div className="flex items-center">
                   <img
@@ -283,4 +286,4 @@ function SidebarWork() {
   );
 }
 
-export default SidebarWork;
+export default SidebarView;
